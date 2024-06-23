@@ -9,10 +9,13 @@ Netflix Eureka Naming Server	   8761
 Netflix Zuul API Gateway Server	   8765
 Zipkin Distributed Tracing Server  9411
 
-connect limits-service to spring-cloud-config-server
-Modify the application.properties file to bootstrap.properties
-add following properties:-
-spring.cloud.config.uri = http://localhost:8888
+- connect limits-service to spring-cloud-config-server
+- Modify the application.properties file to bootstrap.properties
+- add following properties:-
+  spring.cloud.config.uri = http://localhost:8888
+
+- if spring.profile.active does not work then also include below property
+spring.cloud.config.profile = dev
 
 Check the URI:-
 http://localhost:8080/limits
